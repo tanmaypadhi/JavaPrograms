@@ -101,13 +101,3 @@ public class ArraySplit
 
     }
 }
-
-/*
-     Can be divided into two subsets of equal sum
-        Can not be divided into two subsets of equal sum
-        Can be divided into two subsets of equal sum
-        Can not be divided into two subsets of equal sum
-
-public class ArraySplit {
-}
-*/
