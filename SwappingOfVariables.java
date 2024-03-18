@@ -1,46 +1,28 @@
-/*
-Swap two variables with and without using a third variables.
- */
+package Math;
+
 import java.util.Scanner;
 
+/*
+ * Write a program to swap two variables without using a third variable.
+ * Input: a = 67, b = 45
+ * Output: a = 45, b = 67
+ */
+
 public class SwappingOfVariables {
+	public static void swappingOfVariables(int a, int b) {
+		a = a + b;
+		b = a - b;
+		a = a - b;
+		System.out.println("The new values of variables a and b are:"+ a + " "+ b);
+	}
+	
+	public static void main (String args[]) {
+		System.out.println("Enter the values of the Integers:");
+		Scanner in = new Scanner (System.in);
+		int a = in.nextInt();
+		int b = in.nextInt();
+		swappingOfVariables(a, b);
+		in.close();
+	}
 
-    /*
-    With using a third variable.
-
-    public static void swap (int a , int b){
-        int c = a ;
-        a=b;
-        b=c;
-        System.out.println("Variable values are:" + a + " " + b);
-    }
-
-    public static void main (String args[]){
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter the First number");
-        int a = in.nextInt();
-        System.out.println("Enter the Second number");
-        int b = in.nextInt();
-        swap(a,b);
-    }
-*/
-    /*
-    Without using a third variable.
-    */
-
-    public static void swap (int a, int b) {
-        a = a + b;
-        b = a-b;
-        a = a - b;
-        System.out.println("Variable values are:" + a + " " + b);
-    }
-
-    public static void main (String args[]) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter the First number");
-        int a = in.nextInt();
-        System.out.println("Enter the Second number");
-        int b = in.nextInt();
-        swap(a, b);
-    }
 }

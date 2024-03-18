@@ -1,26 +1,30 @@
-/*
-Fibonacci Series using Recursive way.......
-*/
+package Math;
 
-import java.util.Scanner;
+import java.util.*;
+
+/*
+ * 0 1 1 2 3 5 8 13 21 34
+ */
 
 public class FibonacciSeriesUsingRecursive {
-    public static int fibrec(int num) {
-        if (num == 0 || num == 1)
-            return num;
+	public static int findFibonacci(int num) {
+		if(num < 0)
+			throw new IllegalArgumentException("Invalid number");
+		
+		if(num ==0 || num == 1)
+			return num;
+		
+		return findFibonacci(num - 1) + findFibonacci(num - 2);
+	}
+	
+	public static void main (String args[]) {
+		System.out.println("Enter the number");
+		Scanner in = new Scanner(System.in);
+		int num = in.nextInt();
+		for(int i = 0; i < num ; i++) {
+			System.out.println(findFibonacci(i));
+		}
+		in.close();
+	}
 
-        if (num < 0)
-            throw new IllegalArgumentException("Invalid number");
-
-        return fibrec(num - 1) + fibrec(num - 2);
-    }
-
-    public static void main(String args[]) {
-        System.out.println("Enter the number to print the Fibonacci Series");
-        Scanner in = new Scanner(System.in);
-        int num = in.nextInt();
-        for (int i = 0; i < num; i++) {
-            System.out.print(" " + fibrec(i));
-        }
-    }
 }

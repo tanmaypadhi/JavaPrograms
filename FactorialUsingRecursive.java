@@ -1,25 +1,29 @@
-/*
-Find out factorial of a number using recursive.
-*/
+package Math;
 
-import java.util.Scanner;
+import java.util.*;
+
+/*
+ * Factorial of a number using recursive.
+ * Input - 5
+ * Output - 120
+ */
 
 public class FactorialUsingRecursive {
-    public static int findFactRec(int num) {
+	public static int findFact(int num) {
+		if(num < 0)
+			throw new IllegalArgumentException("Negative number");
+		
+		if(num == 0)
+			return 1;
+		
+		return num * findFact(num - 1);
+	}
 
-        if (num == 0 || num == 1)
-            return 1;
-        if (num < 0)
-            throw new IllegalArgumentException("Negative number");
-
-        return num * findFactRec(num - 1);
-    }
-
-    public static void main (String args[]){
-        System.out.println("Enter the number");
-        Scanner in = new Scanner(System.in);
-        int num = in.nextInt();
-        System.out.println("Factorial of the number is " + findFactRec(num));
-         //System.out.println("Factorial of the number is" +
-    }
+	public static void main (String args[]) {
+		System.out.println("Enter the  number");
+		Scanner in = new Scanner(System.in);
+		int num = in.nextInt();
+		System.out.println(findFact(num));
+		in.close();
+	}
 }

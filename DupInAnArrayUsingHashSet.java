@@ -1,15 +1,23 @@
-import java.util.HashSet;
+package Arrays;
+
+import java.util.*;
 
 public class DupInAnArrayUsingHashSet {
-    public static void main (String args[]){
-        int[] ArraryA = {1,1,2,2,4,5,6,7,7,7,8,8,9,9};
-        HashSet<Integer> hashSet = new HashSet<Integer>();
-        for (int i=0; i < ArraryA.length; i++){
-            boolean unique = hashSet.add(ArraryA[i]);
-            if (unique == false)
-                System.out.println("Duplicate Element is:" + ArraryA[i]);
-        }
-
-    }
-
+	public static void findDup(int[] arr) {
+		if(arr.length == 0)
+			throw new IllegalArgumentException("Invalid Array");
+		
+		HashSet<Integer> hSet = new HashSet<>();
+		boolean unique ;
+		for (int i = 0; i < arr.length; i++) {
+			unique = hSet.add(arr[i]);
+		if(unique == false)
+			System.out.println(arr[i]);
+		}
+	}
+	
+	public static void main (String args[]) {
+		int[] a = {0,0,1,1,2,3,4,12};
+		findDup(a);
+	}
 }

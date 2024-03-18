@@ -1,8 +1,9 @@
+package Strings;
+
 /* Performance Test of StringBuffer and StringBuilder */
 
 public class PerformanceTestStringBuilderAndStringBuffer {
-
-    public static void main(String[] args){
+	public static void main(String[] args){
         long startTime = System.currentTimeMillis();
         StringBuffer sb = new StringBuffer("Java");
         for (int i=0; i<10000; i++){
@@ -16,4 +17,5 @@ public class PerformanceTestStringBuilderAndStringBuffer {
         }
         System.out.println("Time taken by StringBuilder: " + (System.currentTimeMillis() - startTime) + "ms");
     }
+
 }

@@ -1,28 +1,30 @@
+package Strings;
+
+import java.util.*;
+
 /*
-  This is a simple java program which will reverse a sentence.
+ * Input - I live in San Francisco
+ * Output - Francisco in live I
  */
 
-import java.util.Scanner;
-
 public class SentenceReverse {
-    public static void sentenceRev(String s){
-        if(s.length()==0 || s.length()==-1)
-            System.out.println("Invalid String");
-        if(s.length()==1)
-            System.out.println(s);
-        String s1=" ";
-        String[] c = s.split(" ");
-        for(int i=c.length -1; i>=0; i--){
-            s1=s1+ c[i] + " ";
-        }
-        System.out.println("The reverse Sentence is:" + s1.trim());
-    }
+	public static void sentenceReverse(String str) {
+		if(str == null || str.length() == 0)
+			throw new IllegalArgumentException("Invalid String");
+		String[] strRev = str.split(" ");
+		String newStr = "";
+		for(int i = strRev.length - 1; i >= 0; i--) {
+			newStr = newStr + strRev[i] + " ";
+		}
+		System.out.println("New reversed sentence is:" + newStr.trim());
+	}
+	
+	public static void main (String args[]) {
+		System.out.println("Enter the Sentence:");
+		Scanner in = new Scanner (System.in);
+		String str = in.nextLine();
+		sentenceReverse(str);
+		in.close();
+	}
 
-    public static void main (String args[]){
-        System.out.println("Enter the sentence to be reversed");
-        Scanner in = new Scanner(System.in);
-        String str = in.nextLine();
-        sentenceRev(str);
-        in.close();
-    }
 }

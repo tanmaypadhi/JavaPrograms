@@ -1,37 +1,35 @@
+package Strings;
+
+import java.util.*;
+
 /*
-This program will decide whether a string is Palindrome.
-*/
-import java.util.Scanner;
+ * Decide whether a String is Palindrome.
+ * Input: madam 
+ * Output: Yes, it is palindrome
+ * Input: hi how are you 
+ * Output: no, it is not palindrome
+ */
 
 public class Palindrome {
-    public static boolean isPallindrome(String s){
+	public static void stringBeingPal(String str) {
+		if(str == null || str.length() == 0)
+			throw new IllegalArgumentException("Invalid String");
+		str.toLowerCase();
+		String strRev = "";
+		for(int i = str.length() - 1; i >= 0; i--) {
+			strRev = strRev + str.charAt(i);
+		}
+		if(strRev.equals(str))
+			System.out.println("Palindrome");
+		else
+			System.out.println("Not Palindrome");
+	}
 
-        if(s.length()==0||s.length()==-1)
-            System.out.println("Invalid String");
-        if(s.length()==1)
-            System.out.println("Any single character string is pallindrome");
-
-        String s1 = "";
-        for(int i=s.length()-1; i>=0;i--){
-            s1=s1+s.charAt(i);
-        }
-        //System.out.println(s1);
-        if(s1.equals(s))
-            return true;
-
-        return false;
-    }
-
-    public static void main(String args[]){
-        System.out.println("Enter the String");
-        Scanner in= new Scanner(System.in);
-        String s = in.nextLine();
-        isPallindrome(s);
-        if(isPallindrome(s))
-            System.out.println("Palindrome");
-        else
-            System.out.println("Not Palindrome");
-        in.close();
-    }
-
+	public static void main (String args[]) {
+		System.out.println("Enter the String");
+		Scanner in = new Scanner(System.in);
+		String str = in.nextLine();
+		stringBeingPal(str);
+		System.out.println(str.substring(1, str.length()-1));
+	}
 }
